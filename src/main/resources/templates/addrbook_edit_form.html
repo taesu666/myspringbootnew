@@ -1,7 +1,6 @@
-
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-<link rel="stylesheet" href="css/addrbook.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="addrbook.css" type="text/css" media="screen" />
 
 <script type="text/javascript">
 	function delcheck() {
@@ -23,9 +22,9 @@
 <div align="center">
 <H2>주소록:수정화면 </H2>
 <HR>
-[<a href="addrbook_list.do">주소록 목록으로</a>] <p>
+<a href="addrbook_list.do">주소록 목록으로</a> <p>
 <form name=form1 method=post action="update.do">
-<input type=hidden name="abId" value="${ab.abId}">
+<input type=hidden name="abId" th:value="${ab.abId}">
 <input type=hidden name="action" value="update">
 
 <table border="1">
