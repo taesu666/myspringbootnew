@@ -3,7 +3,9 @@
 씨발 살려주세요 힘들어 죽겠어요
 
 ---
-주형, 태수 같은 파일 작업 이후 주형 먼저 커밋
+상황 : 주형, 태수 작업 중 주형과 태수의 branch에 각각 커밋을 함
+
+main branch에서 주형의 branch것을 merge
 ```text
 LX@PC10 MINGW64 ~/Desktop/myspringbootnew (main)
 $ git merge origin/feat/del-joohyung
@@ -16,7 +18,7 @@ Fast-forward
 ---
 
 ---
-주형 커밋 이후 태수 커밋
+주형 branch merge이후 태수 branch를 merge
 ```text
 LX@PC10 MINGW64 ~/Desktop/myspringbootnew (main)
 $ git merge origin/feat/del-taesu1
