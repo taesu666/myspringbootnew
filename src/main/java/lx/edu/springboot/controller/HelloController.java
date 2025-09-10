@@ -21,7 +21,11 @@ public class HelloController {
 		return "hello";
 	}
 	
+
 	public void joohyung() {
 		// ㅎㅇ
+	}
+	public void taesu() {
+		// tasue
 	}
 }
