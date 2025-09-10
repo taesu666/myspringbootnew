@@ -27,22 +27,10 @@ public class AddrBookController {
 	public String form() {
 		return "addrbook_form";//jsp file name
 	}
-	
-	/*@RequestMapping("/addrbook_list.do")
-	public String list(HttpServletRequest req) throws Exception {
-		// DAO 불러와서 리스트 넘겨줘야함
-		
-		List<AddrBookVO> list = dao.getDBList();
-		// list를 request에 넣는다.
-		req.setAttribute("data", list);		
-		return "addrbook_list";
-	}*/
+
 	
 	@RequestMapping("/addrbook_list.do")
 	public String list(HttpSession session, HttpServletRequest req) throws Exception {
-	//	if(session.getAttribute("userId") == null) {
-	//		return "login";
-	//	}
 		List<AddrBookVO> list = dao.getDBList();
 		req.setAttribute("data", list);
 		return "addrbook_list";
@@ -50,12 +38,18 @@ public class AddrBookController {
 	
 	
 	@RequestMapping("/edit.do")
-	public ModelAndView editform(@RequestParam("abId") int abId) throws Exception {
-		ModelAndView result = new ModelAndView();		
-		AddrBookVO vo = dao.selectDBList(abId);
-		result.addObject("ab", vo);
-		result.setViewName("addrbook_edit_form");
-		return result;//jsp file name
+	public String edit(@RequestParam("abId") int abId ,HttpServletRequest req) throws Exception {
+		
+		AddrBookVO vo = dao.getDB(abId);
+		req.setAttribute("ab", vo);
+		return "addrbook_edit_form";//jsp file name
+	}
+	
+	@RequestMapping("/update.do")
+	public String update(AddrBookVO vo) {
+		System.out.println("vo=" + vo);
+		//dao.updateDB(vo);
+		return "redirect:addrbook_list.do";
 	}
 	
 	@RequestMapping("/addrbook_editlist.do")

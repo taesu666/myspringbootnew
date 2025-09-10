@@ -32,5 +32,10 @@ public class AddrBookDAO {
 	public AddrBookVO selectDBList(int abId) throws Exception {
 		return session.selectOne("selectDBList", abId);
 	}
+
+	public AddrBookVO getDB(int abId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 }
